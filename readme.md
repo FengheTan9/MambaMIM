@@ -47,15 +47,15 @@
 
 ## News
 
-- **[2024/08/16] Code and weights will be released soon !** 😘
-- **[2024/08/16] Paper released !**
+- **[2024/08/16] Pre-train Weights will be released soon !** 😘
+- **[2024/08/16] Paper and code released !**
 
 
 
 ## TODOs
 
 - [x] Paper released 
-- [ ] Code released
+- [x] Code released
 - [ ] Weight released
 
 
