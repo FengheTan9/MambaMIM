@@ -155,10 +155,10 @@ model = build_hybird(in_channel=1, n_classes=14, img_size=96).cuda()
 model_dict = torch.load("./[your_ckpt_path]/hybird_ct_pretrained_timm_style_mask75.pth")   
 
 if model.load_state_dict(model_dict, strict=False):
-    print("MambaMIM use pretrained weights successfully !")
+    print("MambaMIM load pretrained weights successfully !")
 ```
 
-Downstream pipeline can be refered to [UNETR]([research-contributions/UNETR/BTCV at main · Project-MONAI/research-contributions (github.com)](https://github.com/Project-MONAI/research-contributions/tree/main/UNETR/BTCV))
+Downstream pipeline can be refered to [UNETR](https://github.com/Project-MONAI/research-contributions/tree/main/UNETR/BTCV)
 
 
 
