@@ -173,7 +173,15 @@ This code-base uses helper functions from [SparK](https://github.com/keyu-tian/S
 If the code, paper and weights help your research, please cite:
 
 ```
-
+@misc{tang2024mambamimpretrainingmambastate,
+      title={MambaMIM: Pre-training Mamba with State Space Token-interpolation}, 
+      author={Fenghe Tang and Bingkun Nian and Yingtai Li and Jie Yang and Liu Wei and S. Kevin Zhou},
+      year={2024},
+      eprint={2408.08070},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2408.08070}, 
+}
 ```
 
 
