@@ -47,7 +47,7 @@
 
 ## News
 
-- **[2024/08/16] Pre-train Weights will be released soon !** 😘
+- **[2024/08/16] Pre-training weights will be released soon !** 😘
 - **[2024/08/16] Paper and code released !**
 
 
@@ -158,7 +158,7 @@ if model.load_state_dict(model_dict, strict=False):
     print("MambaMIM load pretrained weights successfully !")
 ```
 
-Downstream pipeline can be refered to [UNETR](https://github.com/Project-MONAI/research-contributions/tree/main/UNETR/BTCV)
+The downstream pipeline can be referred to [UNETR](https://github.com/Project-MONAI/research-contributions/tree/main/UNETR/BTCV)
 
 
 
@@ -173,14 +173,11 @@ This code-base uses helper functions from [SparK](https://github.com/keyu-tian/S
 If the code, paper and weights help your research, please cite:
 
 ```
-@misc{tang2024mambamimpretrainingmambastate,
-      title={MambaMIM: Pre-training Mamba with State Space Token-interpolation}, 
-      author={Fenghe Tang and Bingkun Nian and Yingtai Li and Jie Yang and Liu Wei and S. Kevin Zhou},
-      year={2024},
-      eprint={2408.08070},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2408.08070}, 
+@article{tang2024mambamim,
+  title={MambaMIM: Pre-training Mamba with State Space Token-interpolation},
+  author={Tang, Fenghe and Nian, Bingkun and Li, Yingtai and Yang, Jie and Wei, Liu and Zhou, S Kevin},
+  journal={arXiv preprint arXiv:2408.08070},
+  year={2024}
 }
 ```
 
