@@ -1,6 +1,6 @@
 
 
-## [MIA'25] MambaMIM: Pre-training Mamba with State Space Token Interpolation and its Application to Medical Image Segmentation 
+## MambaMIM: Pre-training Mamba with State Space Token Interpolation and its Application to Medical Image Segmentation 
 
 <p align="center" width="100%">
 <!---->
@@ -172,7 +172,7 @@ if model.load_state_dict(model_dict, strict=False):
     print("MambaMIM use pretrained weights successfully !")
 ```
 
-Downstream pipeline can be referred to [UNETR]([research-contributions/UNETR/BTCV at main · Project-MONAI/research-contributions (github.com)](https://github.com/Project-MONAI/research-contributions/tree/main/UNETR/BTCV)).
+Downstream pipeline can be referred to [UNETR](https://github.com/Project-MONAI/research-contributions/tree/main/UNETR/BTCV).
 
 
 
