@@ -1,12 +1,12 @@
 
 
-## MambaMIM: Pre-training Mamba with State Space Token-interpolation
+## [MIA'25] MambaMIM: Pre-training Mamba with State Space Token Interpolation and its Application to Medical Image Segmentation 
 
 <p align="center" width="100%">
 <!---->
 </p> 
 
-![MambaMIM](img/MambaMIM.png)
+![MambaMIM](img/TOKI.png)
 
 
 
@@ -16,7 +16,9 @@
     <span class="author-block">
     <a target="_blank">Bingkun Nian</a><sup>3</sup>,</span>
     <span class="author-block">
-    <a target="_blank">Yingtai Li</a><sup>1,2</sup>,</span>
+    <a href="https://scholar.google.com/citations?user=ocAtNkkAAAAJ&hl=en" target="_blank">Yingtai Li</a><sup>1,2</sup>,</span>
+    <span class="author-block">
+    <a href="https://scholar.google.com/citations?user=Wo8tMSMAAAAJ&hl=en" target="_blank">Zihang Jiang</a><sup>1,2</sup>,</span>
     <span class="author-block">
     <a href="https://scholar.google.com/citations?user=tmx7tu8AAAAJ&hl=en" target="_blank">Jie Yang</a><sup>3</sup>,</span>
     <span class="author-block">
@@ -25,6 +27,7 @@
     <a href="https://scholar.google.com/citations?user=8eNm2GMAAAAJ&hl=en" target="_blank">S.Kevin Zhou</a><sup>1,2</sup>
     </span>
 </div>
+
 
 <br>
 
@@ -47,7 +50,10 @@
 
 ## News
 
-- **[2024/08/16] Code and weights will be released soon !** 😘
+- **MambaMIM accepted by Medical Image Analyses (MIA'25) ! 🥰** 
+- **Weights released ! 😎**
+- **Code released !** 😘
+- **Code and weights will be released soon !** 😘
 - **[2024/08/16] Paper released !**
 
 
@@ -55,16 +61,22 @@
 ## TODOs
 
 - [x] Paper released 
-- [ ] Code released
-- [ ] Weight released
+- [x] Code released
+- [x] Weight released
 
 
 
 ## Getting Started
 
+### Download weights
+
+|   Name   |  Resolution  |  Intensities  |      Spacing       |                           Weights                            |
+| :------: | :----------: | :-----------: | :----------------: | :----------------------------------------------------------: |
+| MambaMIM | 96 x 96 x 96 | [-175, - 250] | 1.5 x 1.5 x 1.5 mm | [Google Drive (87MB)](https://drive.google.com/file/d/1B3j5aRPxkDJqf8UPGKDiAjg2X85a3Kwx/view?usp=sharing) |
 
 
-### Prepare Environment
+
+### Prepare Environments
 
 ```
 conda create -n mambamim python=3.9
@@ -83,7 +95,7 @@ pip install mamba_ssm-1.2.0.post1+cu118torch1.13cxx11abiFALSE-cp38-cp38-linux_x8
 
 ### Prepare Datasets
 
-We recommend you to convert the dataset into the  [nnUNet](https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/dataset_format.md) format.
+We recommend that you convert the dataset into the [nnUNet](https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/dataset_format.md) format.
 
 ```
 └── MambaMIM
@@ -102,11 +114,9 @@ We recommend you to convert the dataset into the  [nnUNet](https://github.com/MI
                 ├── ...
 ```
 
+An example ```dataset.json``` will be generated in ```./data```
 
-
-A example ```dataset.json``` will be generated in ```./data```
-
-The content should be like below
+The content should be like below:
 
 ```json
 {
@@ -126,11 +136,15 @@ The content should be like below
 
 ## Start Training
 
+![MambaMIM](img/masking_consistency.png)
+
+
+
 Run training on multi-GPU :
 
 ```sh
 # An example of training on 4 GPUs with DDP
-torchrun --nproc_per_node=4 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=12351 main.py --exp_name=debug --data_path=./data  --model=mambamim --bs=12  --exp_dir=debug_mambamim_ddp_4
+torchrun --nproc_per_node=4 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=12351 main.py --exp_name=debug --data_path=./data  --model=mambamim --bs=16  --exp_dir=debug_mambamim_ddp_4
 ```
 
 Run training on the single-GPU :
@@ -152,19 +166,19 @@ from models.network.hymamba import build_hybird
 
 model = build_hybird(in_channel=1, n_classes=14, img_size=96).cuda()
 
-model_dict = torch.load("./[your_ckpt_path]/hybird_ct_pretrained_timm_style_mask75.pth")   
+model_dict = torch.load("mambamim_mask75.pth")   
 
 if model.load_state_dict(model_dict, strict=False):
     print("MambaMIM use pretrained weights successfully !")
 ```
 
-Downstream pipeline can be refered to [UNETR]([research-contributions/UNETR/BTCV at main · Project-MONAI/research-contributions (github.com)](https://github.com/Project-MONAI/research-contributions/tree/main/UNETR/BTCV))
+Downstream pipeline can be referred to [UNETR]([research-contributions/UNETR/BTCV at main · Project-MONAI/research-contributions (github.com)](https://github.com/Project-MONAI/research-contributions/tree/main/UNETR/BTCV)).
 
 
 
 ## Acknowledgements:
 
-This code-base uses helper functions from [SparK](https://github.com/keyu-tian/SparK).
+This code uses helper functions from [SparK](https://github.com/keyu-tian/SparK) and [HySparK](https://github.com/FengheTan9/HySparK).
 
 
 
@@ -173,7 +187,12 @@ This code-base uses helper functions from [SparK](https://github.com/keyu-tian/S
 If the code, paper and weights help your research, please cite:
 
 ```
-
+@article{tang2024mambamim,
+  title={MambaMIM: Pre-training Mamba with State Space Token-interpolation},
+  author={Tang, Fenghe and Nian, Bingkun and Li, Yingtai and Yang, Jie and Wei, Liu and Zhou, S Kevin},
+  journal={arXiv preprint arXiv:2408.08070},
+  year={2024}
+}
 ```
 
 
