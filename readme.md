@@ -54,7 +54,7 @@
 - **Weights released ! 😎**
 - **Code released !** 😘
 - **Code and weights will be released soon !** 😘
-- **[2024/08/16] Paper released !**
+- **Paper released (2024/08/16) !**
 
 
 
@@ -72,7 +72,7 @@
 
 |   Name   |  Resolution  |  Intensities  |      Spacing       |                           Weights                            |
 | :------: | :----------: | :-----------: | :----------------: | :----------------------------------------------------------: |
-| MambaMIM | 96 x 96 x 96 | [-175, 250] | 1.5 x 1.5 x 1.5 mm | [Google Drive (87MB)](https://drive.google.com/file/d/1B3j5aRPxkDJqf8UPGKDiAjg2X85a3Kwx/view?usp=sharing) |
+| MambaMIM | 96x96x96 | [-175, 250] | 1.5x1.5x1.5 mm | [Google Drive (87MB)](https://drive.google.com/file/d/1B3j5aRPxkDJqf8UPGKDiAjg2X85a3Kwx/view?usp=sharing) |
 
 
 
