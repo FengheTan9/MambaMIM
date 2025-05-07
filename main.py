@@ -154,7 +154,7 @@ def pre_train_one_ep(ep, args: arg_util.Args, tb_lg: misc.TensorboardLogger, itr
         
         
         inp = inp.to(args.device, non_blocking=True)
-        MambaSparK.forward
+        MambaMIM.forward
         loss = model(inp, active_b1fff=None, vis=False)
         optimizer.zero_grad()
         loss.backward()
