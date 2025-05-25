@@ -50,7 +50,7 @@
 
 ## News
 
-- **MambaMIM accepted by Medical Image Analyses (MIA'25) ! 🥰** 
+- **MambaMIM accepted by Medical Image Analyses (MedIA'25) ! 🥰** 
 - **Weights released ! 😎**
 - **Code released !** 😘
 - **Code and weights will be released soon !** 😘
@@ -187,11 +187,13 @@ This code uses helper functions from [SparK](https://github.com/keyu-tian/SparK)
 If the code, paper and weights help your research, please cite:
 
 ```
-@article{tang2024mambamim,
-  title={MambaMIM: Pre-training Mamba with State Space Token-interpolation},
-  author={Tang, Fenghe and Nian, Bingkun and Li, Yingtai and Yang, Jie and Wei, Liu and Zhou, S Kevin},
-  journal={arXiv preprint arXiv:2408.08070},
-  year={2024}
+@article{tang2025mambamim,
+  title={MambaMIM: Pre-training Mamba with state space token interpolation and its application to medical image segmentation},
+  author={Tang, Fenghe and Nian, Bingkun and Li, Yingtai and Jiang, Zihang and Yang, Jie and Liu, Wei and Zhou, S Kevin},
+  journal={Medical Image Analysis},
+  pages={103606},
+  year={2025},
+  publisher={Elsevier}
 }
 ```
 
