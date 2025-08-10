@@ -50,7 +50,7 @@
 
 ## News
 
-- **MambaMIM accepted by Medical Image Analyses (MedIA'25) ! 🥰** 
+- **MambaMIM accepted by Medical Image Analysis (MedIA'25) ! 🥰** 
 - **Weights released ! 😎**
 - **Code released !** 😘
 - **Code and weights will be released soon !** 😘
